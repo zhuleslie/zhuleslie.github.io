@@ -1,0 +1,182 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="Leslie"><title> | Leslie Blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Leslie Blog</h1><a id="logo" href="/.">Leslie Blog</a><p class="description">stay hungry stay foolish</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"></h1><div class="post-meta">Apr 15, 2018</div><div class="post-content"><h1 id="Python3学习笔记"><a href="#Python3学习笔记" class="headerlink" title="Python3学习笔记"></a>Python3学习笔记</h1><h2 id="Python3基础语法"><a href="#Python3基础语法" class="headerlink" title="Python3基础语法"></a>Python3基础语法</h2><ul>
+<li><strong>标识符</strong><br><br><br>*第一个字符必须是字母表中字母或下划线 _</li>
+<li><strong>python保留字</strong><br><br><pre><code> import keyword 
+keyword.kwlist </code></pre></li>
+<li><strong>注释</strong><br><br><br><em>Python中单行注释以 # 开头<br><br>
+</em>多行注释可以用多个 # 号，还有 ‘’’ 和 “””</li>
+<li><strong>字符串</strong><br><br><br>*python中单引号和双引号使用完全相同</li>
+<li><strong>多行语句</strong><br><br><br>*Python 通常是一行写完一条语句，但如果语句很长，我们可以使用反斜杠()来实现多行语句</li>
+<li><strong>空行</strong></li>
+<li><strong>等待用户输入</strong><pre><code> input("\n\n按下 enter 键后退出。") </code></pre></li>
+<li><strong>同一行显示多条语句</strong><pre><code> import sys; x = 'runoob'; sys.stdout.write(x + '\n') </code></pre></li>
+<li><strong>多个语句构成代码组</strong><br><br><br>if、while、def和class这样的复合语句，首行以关键字开始，以冒号( : )结束<pre><code>if expression : 
+ suite
+elif expression : 
+ suite 
+else : 
+ suite
+</code></pre></li>
+<li><p><strong>Print 输出</strong><br><br><br>*print 默认输出是换行的，如果要实现不换行需要在变量末尾加上 end=””</p>
+<pre><code>print( x, end=" " )</code></pre>
+</li>
+<li><p><strong>import 与 from…import</strong></p>
+</li>
+</ul>
+<h2 id="Python3基本数据结构"><a href="#Python3基本数据结构" class="headerlink" title="Python3基本数据结构"></a>Python3基本数据结构</h2><ul>
+<li><strong>多个变量赋值</strong></li>
+<li><strong>标准数据类型</strong></li>
+<li><em>Number（数字）</em></li>
+<li><em>String（字符串)</em><blockquote>
+<p>注意：与 C 字符串不同的是，Python 字符串不能被改*</p>
+</blockquote>
+</li>
+</ul>
+<p><em>1.字符串的截取的语法格式</em></p>
+<pre><code>str = 'Runoob'
+print (str)          # 输出字符串
+print (str[0:-1])    # 输出第一个到倒数第二个的所有字符
+print (str[0])       # 输出字符串第一个字符
+print (str[2:5])     # 输出从第三个开始到第五个的字符
+print (str[2:])      # 输出从第三个开始的后的所有字符
+print (str * 2)      # 输出字符串两次
+print (str + "TEST") # 连接字符串 </code></pre>
+
+<p><em>2.在字符串前面添加一个 r，表示原始字符串</em></p>
+<pre><code>>>> print('Ru\noob')
+Ru
+oob
+>>> print(r'Ru\noob')
+Ru\noob</code></pre>
+*3.注意，Python 没有单独的字符类型，一个字符就是长度为1的字符串*
+<pre><code>>>>word = 'Python'
+>>> print(word[0], word[5])
+P n
+>>> print(word[-1], word[-6])
+n P  </code></pre>
+* *List（列表）*
+>注意：与Python字符串不一样的是，列表中的元素是可以改变的
+
+*列表截取的语法格式*
+<pre><code> 
+list = [ 'abcd', 786 , 2.23, 'runoob', 70.2 ]
+tinylist = [123, 'runoob']
+
+print (list)            # 输出完整列表
+print (list[0])         # 输出列表第一个元素
+print (list[1:3])       # 从第二个开始输出到第三个元素
+print (list[2:])        # 输出从第三个元素开始的所有元素
+print (tinylist * 2)    # 输出两次列表
+print (list + tinylist) # 连接列表</code></pre>
+
+<ul>
+<li><em>Tuple（元组）</em><blockquote>
+<p>注意:元组（tuple）与列表类似，不同之处在于元组的元素不能修改元组写在小括号 () 里，元素之间用逗号隔开</p>
+</blockquote>
+<pre><code>tuple = ( ‘abcd’, 786 , 2.23, ‘runoob’, 70.2  )<br>tinytuple = (123, ‘runoob’)</code></pre></li>
+</ul>
+<p>print (tuple)             # 输出完整元组<br>print (tuple[0])          # 输出元组的第一个元素<br>print (tuple[1:3])        # 输出从第二个元素开始到第三个元素<br>print (tuple[2:])         # 输出从第三个元素开始的所有元素<br>print (tinytuple * 2)     # 输出两次元组<br>print (tuple + tinytuple) # 连接元组</p>
+<ul>
+<li><em>Set（集合）</em><blockquote>
+<p>1.集合（set）是一个无序不重复元素的序列。<br>2.基本功能是进行成员关系测试和删除重复元素。<br>3.可以使用大括号 { } 或者 set() 函数创建集合，注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 是用来创建一个空字典。</p>
+</blockquote>
+<pre><code>student = {‘Tom’, ‘Jim’, ‘Mary’, ‘Tom’, ‘Jack’, ‘Rose’}<br>print(student)   # 输出集合，重复的元素被自动去掉</code></pre></li>
+</ul>
+<h1 id="成员测试"><a href="#成员测试" class="headerlink" title="成员测试"></a>成员测试</h1><p>if(‘Rose’ in student) :<br>    print(‘Rose 在集合中’)<br>else :<br>    print(‘Rose 不在集合中’)</p>
+<h1 id="set可以进行集合运算"><a href="#set可以进行集合运算" class="headerlink" title="set可以进行集合运算"></a>set可以进行集合运算</h1><p>a = set(‘abracadabra’)<br>b = set(‘alacazam’)</p>
+<p>print(a)<br>print(a - b)     # a和b的差集<br>print(a | b)     # a和b的并集<br>print(a &amp; b)     # a和b的交集<br>print(a ^ b)     # a和b中不同时存在的元素</p>
+<ul>
+<li><em>Dictionary（字典）</em><blockquote>
+<p>1.字典是一种映射类型，字典用”{ }”标识，它是一个无序的键(key) : 值(value)对集合。<br>2.键(key)必须使用不可变类型。<br>3.在同一个字典中，键(key)必须是唯一的。</p>
+</blockquote>
+<pre><code>dict = {}<br>dict[‘one’] = “1 - 菜鸟教程”<br>dict[2]     = “2 - 菜鸟工具”</code></pre></li>
+</ul>
+<p>tinydict = {‘name’: ‘runoob’,’code’:1, ‘site’: ‘<a href="http://www.runoob.com&#39;}" target="_blank" rel="noopener">www.runoob.com&#39;}</a></p>
+<p>print (dict[‘one’])       # 输出键为 ‘one’ 的值<br>print (dict[2])           # 输出键为 2 的值<br>print (tinydict)          # 输出完整的字典<br>print (tinydict.keys())   # 输出所有键<br>print (tinydict.values()) # 输出所有值</p>
+<p> <em>2.构造函数 dict() 可以直接从键值对序列中构建字典如下:</em></p>
+<pre><code>>>>dict([('Runoob', 1), ('Google', 2), ('Taobao', 3)])
+{'Taobao': 3, 'Runoob': 1, 'Google': 2}
+
+>>> {x: x**2 for x in (2, 4, 6)}
+{2: 4, 4: 16, 6: 36}
+
+>>> dict(Runoob=1, Google=2, Taobao=3)
+{'Taobao': 3, 'Runoob': 1, 'Google': 2}</code></pre>
+
+
+<ul>
+<li><strong>Python数据类型转换</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">函数</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">int(x[,base])</td>
+<td style="text-align:left">将x转换为一个整数</td>
+</tr>
+<tr>
+<td style="text-align:left">str(x)</td>
+<td style="text-align:left">将对象 x 转换为字符串</td>
+</tr>
+<tr>
+<td style="text-align:left">repr(x)</td>
+<td style="text-align:left">将对象 x 转换为表达式字符串</td>
+</tr>
+<tr>
+<td style="text-align:left">tuple(s)</td>
+<td style="text-align:left">将序列 s 转换为一个元组</td>
+</tr>
+<tr>
+<td style="text-align:left">list(s)</td>
+<td style="text-align:left">将序列 s 转换为一个列表</td>
+</tr>
+<tr>
+<td style="text-align:left">set(s)</td>
+<td style="text-align:left">转换为可变集合</td>
+</tr>
+<tr>
+<td style="text-align:left">dict(d)</td>
+<td style="text-align:left">创建一个字典。d 必须是一个序列 (key,value)元组。</td>
+</tr>
+<tr>
+<td style="text-align:left">ord(x)</td>
+<td style="text-align:left">将一个字符转换为它的整数值</td>
+</tr>
+<tr>
+<td style="text-align:left">chr(x)</td>
+<td style="text-align:left">将一个整数转换为一个字符</td>
+</tr>
+</tbody>
+</table>
+<pre><code></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><div class="tags"></div><div class="post-nav"><a class="next" href="/2018/04/10/Markdown语法/"></a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://yoursite.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/04/15/Python3学习笔记/">Python3学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/10/Markdown语法/">Markdown语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/05/first/">如何克服恐惧</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/04/hello-world/">Hello World</a></li></ul></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">Leslie Blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
